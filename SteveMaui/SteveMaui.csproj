@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageTags>MVVM</PackageTags>
+    <NeutralLanguage>fr-CA</NeutralLanguage>
+    <PackageReleaseNotes>Fonctions communes pour du MVVM dans mes projets.</PackageReleaseNotes>
+    <Description>Fonctions communes à utiliser pour du MVVM</Description>
+    <Title>Steve MAUI</Title>
+    <Version>0.0.1</Version>
+    <Authors>Steve Lemieux</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="MVVM\" />
+  </ItemGroup>
+
+</Project>
