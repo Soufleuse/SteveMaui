@@ -10,7 +10,7 @@
     <PackageReleaseNotes>Fonctions communes pour du MVVM dans mes projets.</PackageReleaseNotes>
     <Description>Fonctions communes à utiliser pour du MVVM</Description>
     <Title>Steve MAUI</Title>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <Authors>Steve Lemieux</Authors>
   </PropertyGroup>
 

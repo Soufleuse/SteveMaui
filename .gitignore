@@ -348,3 +348,8 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+.vs/ProjectEvaluation/stevemaui.metadata.v5.1
+.vs/ProjectEvaluation/stevemaui.projects.v5.1
+.vs/SteveMaui/DesignTimeBuild/.dtbcache.v2
+.vs/SteveMaui/v17/.futdcache.v2
+.vs/SteveMaui/v17/.suo

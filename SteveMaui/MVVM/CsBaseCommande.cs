@@ -14,7 +14,8 @@ namespace SteveMAUI.MVVM
 
         public CsBaseCommande(Action<object?> action, Predicate<object?>? predicat)
         {
-            m_objAction = action;
+            Action<object?> actionLocale = action ?? throw new ArgumentNullException(nameof(action));
+            m_objAction = actionLocale;
             m_objPredicat = predicat;
         }
 
