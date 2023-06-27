@@ -35,6 +35,7 @@ bld/
 .vs/**
 .vs/*
 .vs/SteveMaui/**
+Copie.gitignore
 #.vs/ProjectEvaluation/stevemaui.metadata.v5.1
 #.vs/ProjectEvaluation/stevemaui.projects.v5.1
 #.vs/SteveMaui/DesignTimeBuild/.dtbcache.v2
