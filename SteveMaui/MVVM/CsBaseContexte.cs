@@ -14,5 +14,13 @@ namespace SteveMAUI.MVVM
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyname));
             }
         }
+
+        public void NotifierChangement(object sender, string propertyname)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(sender, new PropertyChangedEventArgs(propertyname));
+            }
+        }
     }
 }
