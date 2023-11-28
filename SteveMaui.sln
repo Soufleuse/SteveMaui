@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteveMaui", "SteveMaui\SteveMaui.csproj", "{EEEFC020-69EA-4CE0-893A-F00FE0A56545}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SteveMaui", "SteveMaui\SteveMaui.csproj", "{EEEFC020-69EA-4CE0-893A-F00FE0A56545}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestControles", "TestControles\TestControles.csproj", "{232FE249-9CA1-4CDB-984D-D32495E766F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,12 @@ Global
 		{EEEFC020-69EA-4CE0-893A-F00FE0A56545}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEEFC020-69EA-4CE0-893A-F00FE0A56545}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEEFC020-69EA-4CE0-893A-F00FE0A56545}.Release|Any CPU.Build.0 = Release|Any CPU
+		{232FE249-9CA1-4CDB-984D-D32495E766F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{232FE249-9CA1-4CDB-984D-D32495E766F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{232FE249-9CA1-4CDB-984D-D32495E766F9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{232FE249-9CA1-4CDB-984D-D32495E766F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{232FE249-9CA1-4CDB-984D-D32495E766F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{232FE249-9CA1-4CDB-984D-D32495E766F9}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
