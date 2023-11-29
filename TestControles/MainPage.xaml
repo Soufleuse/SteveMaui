@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:MesControles="clr-namespace:SteveMaui.Controles;assembly=SteveMaui"
+             x:Class="TestControles.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <MesControles:EntreeTexteObligatoire EstValeurValide="{Binding maDonnee.EstTexteValide}"
+                                                 Valeur="{Binding maDonnee.uneChaineTexte}" />
+            <MesControles:EntreeDate x:Name="datDateDebut"
+                                     EstValeurValide="{Binding maDonnee.EstDateValide}"
+                                     ValeurMinimum="2000-01-01"
+                                     ValeurMaximum="2025-12-31"
+                                     Valeur="{Binding maDonnee.uneDate}" />
+            <Label x:Name="lblValeur" />
+            <MesControles:EntreeNumerique ValeurMinimum="5"
+                                          ValeurMaximum="15"
+                                          EstValeurValide="{Binding maDonnee.EstNumeriqueValide}" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView x:Name="monControleDate"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SteveMaui.Controles.EntreeDate"
+             Loaded="EntreeDate_Loaded">
+
+    <StackLayout x:Name="layoutParent">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup Name="ValidityStates">
+                <VisualState Name="Valide">
+                    <VisualState.Setters>
+                        <Setter TargetName="lblTexteAide"
+                                Property="Label.TextColor"
+                                Value="Transparent" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState Name="Invalide">
+                    <VisualState.Setters>
+                        <Setter TargetName="pckMaDate"
+                                Property="DatePicker.BackgroundColor"
+                                Value="Pink" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        
+        <HorizontalStackLayout>
+            <DatePicker x:Name="pckMaDate"
+                        DateSelected="pckMaDate_DateSelected" />
+            <CheckBox x:Name="chkEstValeurNulle"
+                      CheckedChanged="chkEstValeurNulle_CheckedChanged" />
+            <Label VerticalOptions="Center"
+                   Text="Est null?" />
+        </HorizontalStackLayout>
+        
+        <Label x:Name="lblTexteAide"
+               Text="Message d'erreur" />
+    </StackLayout>
+</ContentView>

@@ -3,6 +3,7 @@ using System.Windows.Input;
 
 namespace SteveMAUI.MVVM
 {
+    [Obsolete("Utiliser à la place la classe Command du namespace Microsoft.Maui.Controls")]
     public class CsBaseCommande : ICommand
     {
         public event EventHandler? CanExecuteChanged;
