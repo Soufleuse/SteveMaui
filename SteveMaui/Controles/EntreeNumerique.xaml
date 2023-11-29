@@ -4,16 +4,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SteveMaui.Controles.EntreeNumerique"
              Loaded="EntreeNumerique_Loaded">
-    
-    <HorizontalStackLayout HorizontalOptions="StartAndExpand">
-        <Entry x:Name="txtValeur"
-               MinimumWidthRequest="150"
-               Placeholder="{Binding Source={x:Reference Name=monControleNumerique}, Path=FormatExempleEntry, FallbackValue='0'}"
-               MaxLength="{Binding Source={x:Reference Name=monControleNumerique}, Path=LongueurMaxChampEdition}"
-               Text="{Binding Source={x:Reference Name=monControleNumerique}, Path=Valeur, Mode=TwoWay}"
-               Unfocused="txtValeur_Unfocused" />
-        <Label x:Name="lblMessageErreur"
-               MinimumWidthRequest="50"
-               Text="{Binding Source={x:Reference Name=monControleNumerique}, Path=LibelleErreur, Mode=TwoWay, FallbackValue=''}" />
-    </HorizontalStackLayout>
+
+    <StackLayout x:Name="layoutParent">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup Name="ValidityStates">
+                <VisualState Name="Valide">
+                    <VisualState.Setters>
+                        <Setter TargetName="lblMessageErreur"
+                                Property="Label.TextColor"
+                                Value="Transparent" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState Name="Invalide">
+                    <VisualState.Setters>
+                        <Setter TargetName="txtValeur"
+                                Property="Entry.BackgroundColor"
+                                Value="Pink" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <HorizontalStackLayout HorizontalOptions="StartAndExpand">
+            <Entry x:Name="txtValeur"
+                   MinimumWidthRequest="150"
+                   Placeholder="{Binding Source={x:Reference Name=monControleNumerique}, Path=FormatExempleEntry, FallbackValue='0'}"
+                   MaxLength="{Binding Source={x:Reference Name=monControleNumerique}, Path=LongueurMaxChampEdition}"
+                   Text="{Binding Source={x:Reference Name=monControleNumerique}, Path=Valeur, Mode=TwoWay}"
+                   Unfocused="txtValeur_Unfocused" />
+            <Label x:Name="lblMessageErreur"
+                   MinimumWidthRequest="50"
+                   Text="{Binding Source={x:Reference Name=monControleNumerique}, Path=LibelleErreur, Mode=TwoWay, FallbackValue=''}" />
+        </HorizontalStackLayout>
+    </StackLayout>
 </ContentView>

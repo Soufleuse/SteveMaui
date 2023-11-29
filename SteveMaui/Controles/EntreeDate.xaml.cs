@@ -113,7 +113,7 @@ public partial class EntreeDate : ContentView
                                 typeof(bool),
                                 typeof(EntreeDate),
                                 false,
-                                BindingMode.TwoWay);
+                                BindingMode.OneWayToSource);
 
     public bool EstValeurValide
     {

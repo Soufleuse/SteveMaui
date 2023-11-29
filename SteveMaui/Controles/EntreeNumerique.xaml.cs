@@ -192,7 +192,7 @@ public partial class EntreeNumerique : ContentView
 								typeof(EntreeNumerique),
 								0,
                                 BindingMode.TwoWay,
-                                EstValeurValide,
+                                OnValeurValide,
                                 OnValeurChanged,
                                 null,
                                 null,
@@ -218,7 +218,7 @@ public partial class EntreeNumerique : ContentView
 		}
     }
 
-    private static bool EstValeurValide(BindableObject pView, object pValue)
+    private static bool OnValeurValide(BindableObject pView, object pValue)
     {
         var monEntree = (EntreeNumerique)pView;
         monEntree.LibelleErreur = string.Empty;
@@ -228,6 +228,7 @@ public partial class EntreeNumerique : ContentView
             if (!monEntree.PermettreValeurNull)
             {
                 monEntree.LibelleErreur = "La valeur ne peut pas être nulle.";
+                monEntree.EstValeurValide = false;
                 return false;
             }
         }
@@ -236,16 +237,19 @@ public partial class EntreeNumerique : ContentView
             if (!Int32.TryParse(pValue.ToString(), out Int32 resultat))
             {
                 monEntree.LibelleErreur = "La valeur est invalide.";
+                monEntree.EstValeurValide = false;
                 return false;
             }
 
             if (resultat < monEntree.ValeurMinimum || resultat > monEntree.ValeurMaximum)
             {
                 monEntree.LibelleErreur = "La valeur est trop petit ou trop grande.";
+                monEntree.EstValeurValide = false;
                 return false;
             }
         }
 
+        monEntree.EstValeurValide = true;
         return true;
     }
 
@@ -255,9 +259,36 @@ public partial class EntreeNumerique : ContentView
         monControle.txtValeur.Text = pNouvelleValeur == null ? string.Empty : pNouvelleValeur.ToString();
     }
 
+    public static readonly BindableProperty EstValeurValideProperty =
+        BindableProperty.Create(nameof(EstValeurValide),
+                                typeof(bool),
+                                typeof(EntreeNumerique),
+                                false,
+                                BindingMode.OneWayToSource);
+
+    public bool EstValeurValide
+    {
+        get => (bool)GetValue(EstValeurValideProperty);
+        set
+        {
+            ChangerEtatValidite(value);
+            SetValue(EstValeurValideProperty, value);
+        }
+    }
+
     public EntreeNumerique()
 	{
 		InitializeComponent();
+        ChangerEtatValidite(true);
+    }
+
+    void ChangerEtatValidite(bool estValide)
+    {
+        string etatVisuel = estValide ? "Valide" : "Invalide";
+        if(layoutParent != null) // Chépas pourquoi mais pour ce contrôle, ça arrive d'avoir le layout à null.
+        {
+            VisualStateManager.GoToState(layoutParent, etatVisuel);
+        }
     }
 
     private void EntreeNumerique_Loaded(object sender, EventArgs e)
@@ -289,7 +320,7 @@ public partial class EntreeNumerique : ContentView
 		var entree = (Entry)sender;
 		if (entree == null) { return; }
 
-		var monEntreeNumerique = (EntreeNumerique)entree.Parent.Parent;
+		var monEntreeNumerique = (EntreeNumerique)entree.Parent.Parent.Parent;
 		LibelleErreur = string.Empty;
 
 		if (string.IsNullOrEmpty(entree.Text))

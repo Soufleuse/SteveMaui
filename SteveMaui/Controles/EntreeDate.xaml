@@ -4,7 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SteveMaui.Controles.EntreeDate"
              Loaded="EntreeDate_Loaded">
-    
+
     <StackLayout x:Name="layoutParent">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup Name="ValidityStates">

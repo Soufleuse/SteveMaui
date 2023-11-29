@@ -13,7 +13,7 @@
     <PackageReleaseNotes>Fonctions communes pour du MVVM dans mes projets.</PackageReleaseNotes>
     <Description>Fonctions communes à utiliser pour du MVVM</Description>
     <Title>Steve MAUI</Title>
-    <Version>0.6.2</Version>
+    <Version>0.8.1</Version>
     <Authors>Steve Lemieux</Authors>
 	  
 	<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>

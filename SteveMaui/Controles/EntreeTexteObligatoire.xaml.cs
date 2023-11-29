@@ -80,7 +80,7 @@ public partial class EntreeTexteObligatoire : ContentView
                                 typeof(bool),
                                 typeof(EntreeTexteObligatoire),
                                 false,
-                                BindingMode.TwoWay);
+                                BindingMode.OneWayToSource);
 
     public bool EstValeurValide
     {

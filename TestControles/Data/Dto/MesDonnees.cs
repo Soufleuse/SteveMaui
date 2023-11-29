@@ -34,5 +34,26 @@ namespace TestControles.Data.Dto
 				}
 			}
 		}
-	}
+
+		private bool _EstDateValide = false;
+        public bool EstDateValide
+		{
+			get { return EstDateValide; }
+			set { _EstDateValide = value; }
+		}
+
+		private bool _EstTexteValide = false;
+        public bool EstTexteValide
+		{
+			get { return _EstTexteValide; }
+			set { _EstTexteValide = value; }
+		}
+
+		private bool _EstNumeriqueValide = false;
+        public bool EstNumeriqueValide
+		{
+			get { return _EstNumeriqueValide; }
+			set { _EstNumeriqueValide = value; }
+		}
+    }
 }
