@@ -11,5 +11,10 @@ namespace TestControles
             lblValeur.SetBinding(Label.TextProperty, "Valeur");
             BindingContext = new MonContexte();
         }
+
+        private void ContentPage_Loaded(object sender, EventArgs e)
+        {
+            var i = 0;
+        }
     }
 }
